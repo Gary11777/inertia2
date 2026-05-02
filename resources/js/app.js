@@ -1,4 +1,8 @@
-import { createApp } from 'vue';
-import ExampleComponent from './components/ExampleComponent.vue';
+import { createInertiaApp } from '@inertiajs/vue3';
 
-createApp(ExampleComponent).mount('#app');
+createInertiaApp();
+
+// import { createApp } from 'vue';
+// import ExampleComponent from './components/ExampleComponent.vue';
+
+// createApp(ExampleComponent).mount('#app');

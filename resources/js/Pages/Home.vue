@@ -1,5 +1,9 @@
+<script setup>
+import AppLayout from '../layouts/AppLayout.vue';
+</script>
+
 <template>
-    <div>
+    <AppLayout>
         <h1>Hello Inertia</h1>
-    </div>
+    </AppLayout>
 </template>

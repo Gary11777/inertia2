@@ -3,13 +3,11 @@ import { Link, usePage } from '@inertiajs/vue3';
 
 const page = usePage();
 
-const activeNavClass =
-    'rounded-lg bg-zinc-900 px-3 py-2 text-sm font-medium text-white';
-const inactiveNavClass =
-    'rounded-lg px-3 py-2 text-sm font-medium text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-900';
-
-function navClass(...components) {
-    return components.includes(page.component) ? activeNavClass : inactiveNavClass;
+function navClass(href) {
+    const active = page.url === href || (href !== '/' && page.url.startsWith(href));
+    return active
+        ? 'rounded-lg bg-zinc-900 px-3 py-2 text-sm font-medium text-white'
+        : 'rounded-lg px-3 py-2 text-sm font-medium text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-900';
 }
 </script>
 
@@ -21,10 +19,10 @@ function navClass(...components) {
                     Inertia2
                 </Link>
                 <nav class="flex flex-wrap items-center gap-1 sm:gap-2">
-                    <Link href="/" :class="navClass('Home')" view-transition>Home</Link>
-                    <Link href="/about" :class="navClass('About')" view-transition>About</Link>
-                    <Link href="/contact" :class="navClass('Contact')" view-transition>Contact</Link>
-                    <Link href="/events" :class="navClass('event/Index', 'event/Show')" view-transition>Events</Link>
+                    <Link href="/" :class="navClass('/')" view-transition>Home</Link>
+                    <Link href="/about" :class="navClass('/about')" view-transition>About</Link>
+                    <Link href="/contact" :class="navClass('/contact')" view-transition>Contact</Link>
+                    <Link href="/events" :class="navClass('/events')" view-transition>Events</Link>
                 </nav>
             </div>
         </header>

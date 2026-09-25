@@ -6,13 +6,8 @@ import { Link } from '@inertiajs/vue3';
 <template>
     <Layout>
         <h1><b>Hello World!</b></h1>
-        <ul>
-            <li>
-                <Link href="/events/1">Event 1</Link>
-            </li>
-            <li>
-                <Link href="/events/2">Event 2</Link>
-            </li>
-        </ul>
+        <p>
+            <Link href="/events">List of Events</Link>
+        </p>
     </Layout>
 </template>

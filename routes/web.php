@@ -18,3 +18,6 @@ Route::get('/contact', function () {
 
 Route::get('/events/{event}', [EventsController::class, 'show'])
     ->name('events.show');
+
+Route::get('/events', [EventsController::class, 'index'])
+    ->name('events.index');

@@ -18,4 +18,13 @@ class EventsController extends Controller
             ),
         ]);
     }
+
+    public function index()
+    {
+        return Inertia::render('event/Index', [
+            'events' => Event::query()
+            ->orderBy('id')
+            ->get(['id', 'title', 'start_date']),
+        ]);
+    }
 }

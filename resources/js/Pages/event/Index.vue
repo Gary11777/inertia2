@@ -1,6 +1,6 @@
 <script setup>
 import Layout from '../../Layout.vue';
-import { Link } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 
 defineProps({
     events: {
@@ -11,6 +11,11 @@ defineProps({
 </script>
 
 <template>
+    <Head>
+        <title>Events</title>
+        <meta name="description" content="Browse all events on Inertia2">
+    </Head>
+
     <Layout>
         <h1>Events</h1>
 

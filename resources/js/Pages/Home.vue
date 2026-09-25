@@ -1,6 +1,6 @@
 <script setup>
 import Layout from '../Layout.vue';
-import { Link, router } from '@inertiajs/vue3';
+import { Head, Link, router } from '@inertiajs/vue3';
 import { ref } from 'vue';
 
 const props = defineProps({
@@ -30,6 +30,11 @@ function hideEventsList() {
 </script>
 
 <template>
+    <Head>
+        <title>Home Page</title>
+        <meta name="description" content="Home page of Inertia2">
+    </Head>
+
     <Layout>
         <h1><b>Inertia2 Home Page</b></h1>
 

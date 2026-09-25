@@ -31,7 +31,7 @@ function hideEventsList() {
 
 <template>
     <Layout>
-        <h1><b>Hello World!</b></h1>
+        <h1><b>Inertia2 Home Page</b></h1>
 
         <p>
             <!-- Looks like a link; stays on Home -->

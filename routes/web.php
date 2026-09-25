@@ -3,9 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\EventsController;
+use App\Models\Event;
 
 Route::get('/', function () {
-    return Inertia::render('Home');
+    return Inertia::render('Home', [
+        'events' => Inertia::optional(fn () => Event::query()
+            ->orderBy('id')
+            ->get(['id', 'title', 'start_date'])),
+    ]);
 });
 
 Route::get('/about', function () {

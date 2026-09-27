@@ -1,6 +1,6 @@
 <script setup>
 import Layout from '../../Layout.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, router } from '@inertiajs/vue3';
 
 defineProps({
     events: {
@@ -8,6 +8,12 @@ defineProps({
         required: true,
     },
 });
+
+function refreshEvents() {
+    router.reload({
+        only: ['events'],
+    });
+}
 </script>
 
 <template>
@@ -27,5 +33,13 @@ defineProps({
         </ul>
 
         <p v-else>No events yet.</p>
+
+        <button 
+        type="button"
+        class="mt-4 cursor-pointer rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-800 shadow-sm transition hover:bg-zinc-100" 
+        @click="refreshEvents"
+        >
+        Refresh Events List
+        </button>
     </Layout>
 </template>

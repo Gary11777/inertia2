@@ -19,10 +19,10 @@ function navClass(href) {
                     Inertia2
                 </Link>
                 <nav class="flex flex-wrap items-center gap-1 sm:gap-2">
-                    <Link href="/" :class="navClass('/')" view-transition>Home</Link>
-                    <Link href="/about" :class="navClass('/about')" view-transition>About</Link>
-                    <Link href="/contact" :class="navClass('/contact')" view-transition>Contact</Link>
-                    <Link href="/events" :class="navClass('/events')" view-transition>Events</Link>
+                    <Link href="/" :class="navClass('/')" view-transition preserve-scroll>Home</Link>
+                    <Link href="/about" :class="navClass('/about')" view-transition preserve-scroll>About</Link>
+                    <Link href="/contact" :class="navClass('/contact')" view-transition preserve-scroll>Contact</Link>
+                    <Link href="/events" :class="navClass('/events')" view-transition preserve-scroll>Events</Link>
                 </nav>
             </div>
         </header>
